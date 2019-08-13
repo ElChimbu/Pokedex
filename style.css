@@ -1,0 +1,64 @@
+body {
+    overflow-x: hidden;
+    padding: 0;
+    margin: 0;
+}
+
+.pokedex{
+    position: relative;
+    top: 150px;
+    width: 70%;
+    height: 750px;
+    background-color: gray;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.top-side{
+    width: 55%;
+    height: 400px;
+    background-color: #bb3526;
+    margin-right: auto;
+    margin-left: auto;
+    border: solid 3px black;
+    border-radius: 0px 70px 70px 0px;
+    z-index: 0;
+}
+
+.speaker{
+    position: relative;
+    top: 95px;
+    width: 20%;
+    height: 200px;
+    background-color: #bb3526;
+    right: 151px;
+    border-color: black;
+    border-style: solid;
+    border-width: 3px 0px 3px 3px;
+    border-radius: 100px 0px 0px 100px;
+    z-index: 1;
+}
+
+.camera{
+    position: relative;
+    width: 75%;
+    height: 300px;
+    bottom: 160px;
+    border: solid black 2px;
+    border-radius: 8px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(68, 68, 68);
+}
+
+.screen{
+    position: relative;
+    width: 80%;
+    height: 340px;
+    margin-left: 7%;
+    bottom: 20px;
+    border: solid rgb(187, 187, 187) 3px;
+    background-color: rgb(96, 96, 167);
+    border-radius: 10px;
+}
+
