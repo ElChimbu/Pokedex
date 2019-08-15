@@ -320,14 +320,110 @@ h2{
 /* Stats*/
 
 h3{
+    position: relative;
+    bottom: 10px;
+    width: 100%;
+    background-color: black;
     font-family: 'Russo One', sans-serif;
     text-align: center;
     text-transform: uppercase;
+    color: rgb(95, 136, 18);
 }
 
 div.img{
+    position: relative;
+    left: 20px;
     width: 125px;
     height: 125px;
-    background-color: gray;
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 0px 30px 0px 30px;
+}
 
+img{
+    position: relative;
+    width: 225px;
+    height: 225px;
+    bottom: 50px;
+    right: 50px;
+}
+
+div.abilities{
+    position: relative;
+    bottom: 140px;
+    left: 270px;
+    font-family: 'Russo One', sans-serif;
+}
+
+ul{
+    list-style: none;
+}
+
+li{
+    width: 147px;
+    height: 40px;
+    background-color: green;
+    position: relative;
+    margin-bottom: 10px;
+    right: 54px;
+    border: 2px solid rgb(13, 99, 13);
+    border-radius: 0px 0px 30px 0px;
+
+}
+
+li>p{
+    position: relative;
+    bottom: 5px;
+    left: 10px;
+}
+
+.weight{
+    position: relative;
+    width: 50px;
+    left: 20px;
+    bottom: 80px;
+    font-family: 'Russo One', sans-serif;
+}
+
+.weight > p{
+    position: relative;
+    bottom: 10px;
+    left: 5px;
+}
+
+.type{
+    font-family: 'Russo One', sans-serif;
+    position: absolute;
+    width: 100px;
+    height: 20px;
+    bottom: 120px;
+    left: 40px;
+}
+
+.exp{
+    font-family: 'Russo One', sans-serif;
+    position: relative;
+    height: 90px;
+    left: 240px;
+    bottom: 195px;
+    width: 170px;
+}
+
+.stats{
+    position: relative;
+    top: 10px;
+    width: 165px;
+    height: 25px;
+    border: 5px solid black;
+    border-radius: 10px;
+    z-index: 0;
+}
+
+.bar{
+    z-index: 1;
+    width: 63%;
+    height: 25px;
+    border-radius: 3px;
+    background: rgb(128,5,5);
+    background: linear-gradient(90deg, rgba(128,5,5,1) 0%, rgba(94,121,9,1) 24%, rgba(7,158,35,1) 45%, rgba(5,255,0,1) 100%);
 }
