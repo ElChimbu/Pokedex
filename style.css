@@ -4,44 +4,83 @@ body {
     margin: 0;
 }
 
-.pokedex{
+.pokedex {
     position: relative;
     top: 150px;
     width: 70%;
-    height: 750px;
-    background-color: gray;
+    height: 790px;
     margin-right: auto;
     margin-left: auto;
 }
 
-.top-side{
-    width: 55%;
+.top-side {
+    width: 600px;
     height: 400px;
     background-color: #bb3526;
     margin-right: auto;
     margin-left: auto;
     border: solid 3px black;
-    border-radius: 0px 70px 70px 0px;
+    border-radius: 4px 60px 60px 4px;
     z-index: 0;
 }
 
-.speaker{
+.speaker {
     position: relative;
-    top: 95px;
-    width: 20%;
-    height: 200px;
+    top: 50px;
+    width: 118px;
+    height: 220px;
     background-color: #bb3526;
-    right: 151px;
-    border-color: black;
+    left: -120px;
     border-style: solid;
-    border-width: 3px 0px 3px 3px;
+    border-width: 1px 0px 3px 3px;
+    border-color: black; 
     border-radius: 100px 0px 0px 100px;
-    z-index: 1;
+    z-index: 0;
 }
 
-.camera{
+.top-bottom-speaker {
     position: relative;
-    width: 75%;
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    border: 2.5px solid rgb(51, 51, 51);
+    border-radius: 100px;
+    top: 50px;
+    left: 65px;
+    margin-bottom: 10px;
+}
+
+.right-speaker {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border: 2.5px solid rgb(51, 51, 51);
+    background-color: black;
+    border-radius: 100px;
+    top: 55px;
+    left: 103px;
+    margin: 0;
+}
+
+.left-speaker {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    border: 2.5px solid rgb(51, 51, 51);
+    border-radius: 103px;
+    top: 30px;
+    left: 26px;
+    margin: 0;
+}
+
+.left-right-speaker :nth-child(1) {
+    display: none;
+}
+
+.camera {
+    position: relative;
+    width: 500px;
     height: 300px;
     bottom: 160px;
     border: solid black 2px;
@@ -51,14 +90,244 @@ body {
     background-color: rgb(68, 68, 68);
 }
 
-.screen{
+.cam {
     position: relative;
-    width: 80%;
-    height: 340px;
-    margin-left: 7%;
-    bottom: 20px;
-    border: solid rgb(187, 187, 187) 3px;
+    width: 20px;
+    height: 20px;
+    background-color: rgb(19, 19, 19);
+    border: 2.5px solid rgb(87, 87, 87);
+    border-radius: 103px;
+    top: 130px;
+    left: 467px;
+    margin: 0;
+}
+
+.screen {
+    position: relative;
+    width: 420px;
+    height: 330px;
+    left: 25px;
+    bottom: 50px;
+    border: solid rgb(187, 187, 187) 5px;
     background-color: rgb(96, 96, 167);
     border-radius: 10px;
 }
 
+.middle-bar {
+    position: relative;
+    bottom: 10px;
+    right: 15px;
+    width: 590px;
+    height: 40px;
+    background-color: #bb3526;
+    border-style: solid;
+    border-color: black;
+    border-width: 2px 5px 2px 5px;
+    border-radius: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    z-index: 1;
+}
+
+.middle {
+    position: relative;
+    top: 5px;
+    width: 10px;
+    height: 30px;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: black;
+}
+
+
+/* bottom side*/
+
+.second-screen {
+    position: absolute;
+    width: 70%;
+    height: 280px;
+    margin-left: 80px;
+    bottom: 25px;
+    border: solid rgb(187, 187, 187) 5px;
+    background-color: rgb(48, 42, 73);
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.bottom-side {
+    position: relative;
+    bottom: 20px;
+    width: 600px;
+    height: 350px;
+    background-color: #bb3526;
+    margin-right: auto;
+    margin-left: auto;
+    border-style: solid;
+    border-color: black;
+    border-width: 0px 3px 1px 3px;
+    border-radius: 4px 60px 60px 4px;
+    z-index: 0;
+}
+
+.bottom-pad {
+    position: relative;
+    bottom: 3px;
+    right: 221px;
+    width: 220px;
+    height: 344px;
+    background-color: rgb(68, 68, 68);
+    border-style: solid;
+    border-width: 10px 0px 0px 5px;
+    border-color: black;
+    border-radius: 160px 0px 4px 160px;
+}
+
+.light {
+    position: relative;
+    width: 30px;
+    height: 18px;
+    background: rgb(25, 136, 25);
+    top: 150px;
+    border: 1px solid rgb(3, 83, 3);
+    border-radius: 0px 10px 10px 0px;
+
+
+}
+
+.controls {
+    display: none;
+    position: absolute;
+    width: 50px;
+    height: 60px;
+    background-color: black;
+    z-index: 2;
+}
+
+.enter-button{
+    position: relative;
+    bottom: 290px;
+    width: 200px;
+    height: 220px;
+    background-color: rgb(68, 68, 68);
+    left: 599px;
+    border-style: solid;
+    border-width: 3px 1px 3px 0px;
+    border-color: black; 
+    border-radius: 0px 100px 100px 0px;
+}
+
+.enviroment{
+    position: relative;
+    top: 18px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 180px;
+    height: 180px;
+    background-color: rgb(184, 184, 184);
+    border-radius: 100px;
+    border: 1px solid black;
+}
+
+.contour{
+    position: relative;
+    top: 13px;
+    width: 150px;
+    height: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: transparent;
+    border: 2px solid black;
+    border-radius: 100px;
+}
+
+.btn{
+    position: relative;
+    left: 554px;
+    bottom: 48px;
+    width: 120px;
+    height: 120px;
+    background-color: rgb(45, 116, 45);
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 100px;
+    border: 15px solid black;
+    cursor: pointer;
+
+}
+
+.gamepad{
+    position: absolute;
+    bottom: 60px;
+    width: 200px;
+    height: 220px;
+    background-color: rgb(68, 68, 68);
+    left: -120px;
+    border-style: solid;
+    border-width: 1px 0px 3px 3px;
+    border-color: black; 
+    border-radius: 100px 0px 0px 100px;
+    z-index: 0;
+}
+
+.top-bottom-btn{
+    position: relative;
+    top: 20px;
+    width: 30px;
+    height: 110px;
+    background: gray;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px 0px 1px 0px;
+    border-radius: 6px;
+    z-index: 1;
+}
+
+.right-left-btn{
+    position: relative;
+    bottom: 50px;
+    width: 110px;
+    height: 30px;
+    background: gray;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: solid;
+    border-color: black;
+    border-width: 0px 1px 0px 1px;
+    border-radius: 6px;
+    z-index: 1;
+}
+
+h2{
+    color: rgb(25, 20, 44);
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#pokemon{
+    position: relative;
+    top: 20px;
+    font-size: 1.2em;
+    text-align: center;
+    width: 80%;
+    height: 50px;
+    left: 42px;
+    border-radius: 20px;
+
+}
+
+/* Stats*/
+
+h3{
+    font-family: 'Russo One', sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+div.img{
+    width: 125px;
+    height: 125px;
+    background-color: gray;
+
+}
