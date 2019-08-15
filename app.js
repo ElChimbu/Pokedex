@@ -24,6 +24,11 @@ const addPokemon = () =>{
 
     fetch(`https://pokeapi.co/api/v2/pokemon/${value}`)
         .then( data =>{
+            if(data.status !== 200){
+                firstScreen.innerHTML = `
+                    <h3>Not Found your Pokemon</h3>
+                `
+            }
             data.json()
             .then(transformData =>{
                 const name = transformData.name;
@@ -38,9 +43,8 @@ const addPokemon = () =>{
                 var NewPokemon = new Pokemon(name, attack1, attack2, type, weight, exp, img);
             
                 printPokemon(NewPokemon);
-            
             })
-        })
+        }).catch( err => console.log(err))
     
     form.reset();
 }
