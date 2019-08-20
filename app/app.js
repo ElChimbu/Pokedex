@@ -1,59 +1,14 @@
-//Constants
+//Imports
+import Pokemon from './class.js'
+import {pokeLocalStorage} from './localStorage.js'
 
-const form = document.querySelector('#form');
-const firstScreen = document.querySelector('.screen');
+//Variables
+let pokemonArray = []
 
-//DOM events
+//Exports
+export const firstScreen = document.querySelector('.screen');
 
-form.addEventListener('submit', (e) =>{
-    e.preventDefault()
-    addPokemon()
-})
-
-//Classs
-
-class Pokemon{
-    constructor(name, attack1, attack2, type, weight, exp, img, location){
-        this.name = name;
-        this.attack1 = attack1;
-        this.attack2 = attack2;
-        this.type = type;
-        this.weight = weight;
-        this.exp = exp;
-        this.img = img;
-        this.location = location;
-    }
-}
-
-//Arrow functions
-
-const notFoundPokemon = (error) =>{
-    if(error.status !== 200){
-        return firstScreen.innerHTML = `
-        <p class="error">Error ${error.status} pokemon not found</p>        `
-    }
-
-}
-
-const pokemonData = (pokeData) =>{
-    
-    fetch(pokeData.fetchLocation)
-        .then( response =>{
-            response.json()
-            .then(location => {
-                const currentLocation = location[0].location_area.name.replace(/-/g, " ");
-
-                 NewPokemon = new Pokemon(pokeData.name, pokeData.attack1, pokeData.attack2, pokeData.type, pokeData.weight, pokeData.exp, pokeData.img, currentLocation );
-                 console.log(NewPokemon);
-                 printPokemon(NewPokemon);
-
-            })
-
-    })
-
-}
-
-const addPokemon = () =>{
+export const addPokemon = () =>{
     let value = document.querySelector('#pokemon').value.toLowerCase();
 
     fetch(`https://pokeapi.co/api/v2/pokemon/${value}`)
@@ -70,17 +25,44 @@ const addPokemon = () =>{
                 const weight = transformData.weight;
                 const exp = transformData.base_experience;
                 const img = transformData.sprites.front_default;
-                const fetchLocation = transformData.location_area_encounters;
+                const id = transformData.id;
 
+
+                const all = {name, attack1, attack2, type, weight, exp, img, id}
                 
-                const all = {name, attack1, attack2, type, weight, exp, img, fetchLocation}
-                
-                pokemonData(all)
+                pokemonArray.push(name)
+
+                pokeLocalStorage(pokemonArray)
+                pokemonData(all);
                 
            })
         }).catch( err => console.log(err))
     
     form.reset();
+}
+
+const notFoundPokemon = (error) =>{
+    if(error.status !== 200){
+        return firstScreen.innerHTML = `
+        <p class="error">Error ${error.status} pokemon not found</p>        `
+    }
+
+}
+
+const pokemonData = (pokeData) =>{
+    
+    fetch(`https://pokeapi.co/api/v2/location/${pokeData.id}/`)
+        .then( response =>{
+            response.json()
+            .then(location => {
+                const currentLocation = location.areas[0].name.replace(/-/g, " ");
+
+                 let NewPokemon = new Pokemon(pokeData.name, pokeData.attack1, pokeData.attack2, pokeData.type, pokeData.weight, pokeData.exp, pokeData.img, currentLocation );
+                 printPokemon(NewPokemon);
+            })
+
+    });
+
 }
 
 const setExp = (exp) =>{
@@ -114,19 +96,18 @@ const printPokemon = (pokemon) =>{
                     </li>
                 </ul>
             </div>
-            <div class="weight">
-                <span>Weight:</span>
-                <p>${pokemon.weight} kg</p>
-            </div>
             <div class="type">
                 <span>Type: ${pokemon.type}</span>
             </div>
             <div class="exp">
-                <span>Exp: ${pokemon.exp}</span>
+                <span>Base exp: ${pokemon.exp}</span>
                 <div class="stats">
                     <div class="bar" style="width: ${setExp(pokemon.exp)}%"></div>
                 </div>
             </div>
+            <div class="currentLocation">
+                <p>Current location:</p>
+                <p>${pokemon.location}</p>
+            </div>
     `
-
 }

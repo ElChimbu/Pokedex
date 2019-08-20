@@ -2,11 +2,16 @@ body {
     overflow-x: hidden;
     padding: 0;
     margin: 0;
+    background-image: url("../src/village.png");
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    font-family: 'Russo One', sans-serif;
 }
 
 .pokedex {
     position: relative;
-    top: 150px;
+    top: 100px;
     width: 70%;
     height: 790px;
     margin-right: auto;
@@ -16,12 +21,14 @@ body {
 .top-side {
     width: 600px;
     height: 400px;
-    background-color: #bb3526;
+    background: rgb(195,39,15);
+    background: radial-gradient(circle, rgba(195,39,15,1) 0%, rgba(187,53,32,1) 0%, rgba(188,54,32,1) 100%, rgba(255,92,66,1) 100%);
     margin-right: auto;
     margin-left: auto;
     border: solid 3px black;
     border-radius: 4px 60px 60px 4px;
     z-index: 0;
+    box-shadow: 10px 10px 10px 5px rgba(0,0,0,0.75);
 }
 
 .speaker {
@@ -127,6 +134,8 @@ body {
     margin-right: auto;
     margin-left: auto;
     z-index: 1;
+    box-shadow: 10px 0px 20px 2px rgba(0,0,0,0.75);
+
 }
 
 .middle {
@@ -144,6 +153,10 @@ body {
 
 .second-screen {
     position: absolute;
+    background-image: url("../src/pokeball1.png");
+    background-size: 280px;
+    background-position-x: 290px;
+    background-repeat: no-repeat;   
     width: 70%;
     height: 280px;
     margin-left: 80px;
@@ -166,6 +179,7 @@ body {
     border-color: black;
     border-width: 0px 3px 1px 3px;
     border-radius: 4px 60px 60px 4px;
+    box-shadow: 10px 10px 10px 5px rgba(0,0,0,0.75);
     z-index: 0;
 }
 
@@ -175,8 +189,8 @@ body {
     right: 221px;
     width: 220px;
     height: 344px;
-    background-color: rgb(68, 68, 68);
-    border-style: solid;
+    background: rgb(195,39,15);
+    background: linear-gradient(45deg, rgba(195,39,15,1) 0%, rgba(29,8,8,1) 0%, rgba(45,45,45,1) 15%, rgba(68,68,68,1) 100%, rgba(255,92,66,1) 100%);    border-style: solid;
     border-width: 10px 0px 0px 5px;
     border-color: black;
     border-radius: 160px 0px 4px 160px;
@@ -214,6 +228,7 @@ body {
     border-width: 3px 1px 3px 0px;
     border-color: black; 
     border-radius: 0px 100px 100px 0px;
+    box-shadow: 10px 10px 15px 5px rgba(0,0,0,0.75);
 }
 
 .enviroment{
@@ -246,8 +261,8 @@ body {
     bottom: 48px;
     width: 120px;
     height: 120px;
-    background-color: rgb(45, 116, 45);
-    margin-left: auto;
+    background: rgb(195,39,15);
+    background: linear-gradient(180deg, rgba(195,39,15,1) 0%, rgba(171,178,8,1) 0%, rgba(68,68,68,1) 100%, rgba(255,92,66,1) 100%);    margin-left: auto;
     margin-right: auto;
     border-radius: 100px;
     border: 15px solid black;
@@ -267,6 +282,7 @@ body {
     border-color: black; 
     border-radius: 100px 0px 0px 100px;
     z-index: 0;
+    box-shadow: inset 32px 26px 31px -37px rgba(0,0,0,0.75);
 }
 
 .top-bottom-btn{
@@ -274,7 +290,8 @@ body {
     top: 20px;
     width: 30px;
     height: 110px;
-    background: gray;
+    background: rgb(195,39,15);
+    background: radial-gradient(circle, rgba(195,39,15,1) 0%, rgb(14, 14, 14) 0%, rgba(45,45,45,1) 15%, rgba(157,157,157,1) 100%, rgba(255,92,66,1) 100%);
     margin-left: auto;
     margin-right: auto;
     border-style: solid;
@@ -289,7 +306,8 @@ body {
     bottom: 50px;
     width: 110px;
     height: 30px;
-    background: gray;
+    background: rgb(195,39,15);
+    background: radial-gradient(circle, rgba(195,39,15,1) 0%, rgb(14, 14, 14) 0%, rgba(45,45,45,1) 15%, rgba(157,157,157,1) 100%, rgba(255,92,66,1) 100%);
     margin-left: auto;
     margin-right: auto;
     border-style: solid;
@@ -324,7 +342,6 @@ h3{
     bottom: 10px;
     width: 100%;
     background-color: black;
-    font-family: 'Russo One', sans-serif;
     text-align: center;
     text-transform: uppercase;
     color: rgb(95, 136, 18);
@@ -336,21 +353,22 @@ div.img{
     width: 125px;
     height: 125px;
     background-color: transparent;
-    border: 1px solid black;
+    border: 3px solid black;
     border-radius: 0px 30px 0px 30px;
 }
 
 img{
     position: relative;
-    width: 100%;
-    height: 100%;
+    width: 150px;
+    height: 150px;
+    bottom: 10px;
+    right: 10px;
 }
 
 div.abilities{
     position: relative;
     bottom: 160px;
     left: 270px;
-    font-family: 'Russo One', sans-serif;
 }
 
 ul{
@@ -375,35 +393,19 @@ li>p{
     left: 10px;
 }
 
-.weight{
-    position: relative;
-    width: 150px;
-    left: 20px;
-    bottom: 80px;
-    font-family: 'Russo One', sans-serif;
-}
-
-.weight > p{
-    position: relative;
-    bottom: 10px;
-    left: 5px;
-}
-
 .type{
-    font-family: 'Russo One', sans-serif;
     position: absolute;
-    width: 100px;
+    width: 150px;
     height: 20px;
-    bottom: 120px;
-    left: 40px;
+    bottom: 110px;
+    left: 30px;
 }
 
 .exp{
-    font-family: 'Russo One', sans-serif;
     position: relative;
     height: 90px;
     left: 240px;
-    bottom: 160px;
+    bottom: 95px;
     width: 170px;
 }
 
@@ -427,11 +429,32 @@ li>p{
 }
 
 .error{
+    color:black;
     position: relative;
-    color: rgb(31, 31, 87);
-    font-family: 'Russo One', sans-serif;
     text-align: center;
-    font-size: 1.4em;
-    font-weight: bold;
-    top: 120px;
+    top: 125px;
+    font-size: 1.5em;
+}
+
+.currentLocation{
+    position: relative;
+    bottom: 210px;
+    width: 160px;
+    left: 0px;
+}
+
+.currentLocation > p{
+    width: 87%;
+    height: 30px;
+    margin-bottom: -16px;
+    border-radius: 10px 1px 10px 1px;
+    background: rgb(185, 185, 128);
+}
+
+.currentLocation :nth-last-child(1){
+    background: rgb(0, 255, 136);
+    width: 100%;
+    height: 100%;
+    border-radius: 0px 10px 10px 0px;
+
 }
