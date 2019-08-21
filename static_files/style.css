@@ -317,6 +317,58 @@ body {
     z-index: 1;
 }
 
+.clickeablePad-Top{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    top: 3px;
+    width: 15px;
+    height: 25px;
+    background-color: rgb(83, 83, 83);
+}
+
+.clickeablePad-bottom{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    top: 57px;
+    width: 15px;
+    height: 25px;
+    background-color: rgb(83, 83, 83);
+}
+
+.clickeablePad-left{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    top: 6px;
+    left: 3px;
+    border: none;
+    width: 25px;
+    height: 15px;
+    background-color: rgb(83, 83, 83);
+    cursor: pointer;
+}
+
+.clickeablePad-right{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    top: 6px;
+    left: 51px;
+    border: none;
+    width: 25px;
+    height: 15px;
+    background-color: rgb(83, 83, 83);
+    cursor: pointer;
+}
+
+
+
 h2{
     color: rgb(25, 20, 44);
     text-align: center;
@@ -429,10 +481,14 @@ li>p{
 }
 
 .error{
+    position: relative;
     color:black;
+    width: 350px;
+    margin-left: auto;
+    margin-right: auto;
     position: relative;
     text-align: center;
-    top: 125px;
+    top: 115px;
     font-size: 1.5em;
 }
 
