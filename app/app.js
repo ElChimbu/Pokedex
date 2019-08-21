@@ -1,14 +1,16 @@
 //Imports
 import Pokemon from './class.js'
-import {pokeLocalStorage} from './localStorage.js'
+import {pokeLocalStorage, printPokemonList} from './localStorage.js'
+
 
 //Variables
 let pokemonArray = []
+let contador = 1;
 
 //Exports
 export const firstScreen = document.querySelector('.screen');
 
-export const addPokemon = () =>{
+export const addPokemon = () => {
     let value = document.querySelector('#pokemon').value.toLowerCase();
 
     fetch(`https://pokeapi.co/api/v2/pokemon/${value}`)
@@ -35,16 +37,27 @@ export const addPokemon = () =>{
                 pokeLocalStorage(pokemonArray)
                 pokemonData(all);
                 
-           })
+           }).catch(err => notFoundPokemon(err)
+           )
         }).catch( err => console.log(err))
     
     form.reset();
 }
 
+export const handleToggle = () => {
+    if(contador == 1){
+        printPokemon()
+        contador = 0
+    }else{
+        console.log('pantalla original')
+        contador = 1; 
+    }
+}
+
 const notFoundPokemon = (error) =>{
     if(error.status !== 200){
         return firstScreen.innerHTML = `
-        <p class="error">Error ${error.status} pokemon not found</p>        `
+        <p class="error">Error type: "${error.status}"[pokemon not found]</p> `
     }
 
 }
