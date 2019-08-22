@@ -1,6 +1,7 @@
 //Imports
-import Pokemon from './class.js'
-import {pokeLocalStorage, printPokemonList} from './localStorage.js'
+import Pokemon from './class.js';
+import {pokeLocalStorage} from './localStorage.js';
+import {deepScreen} from './localStorage.js';
 
 
 //Variables
@@ -45,11 +46,14 @@ export const addPokemon = () => {
 }
 
 export const handleToggle = () => {
-    if(contador == 1){
-        printPokemon()
+    if(contador == 1 && Pokemon){
+        firstScreen.style.display = "none";
+        deepScreen.style.display = "inherit";
+
         contador = 0
     }else{
-        console.log('pantalla original')
+        firstScreen.style.display = "inherit";
+        deepScreen.style.display = "none";
         contador = 1; 
     }
 }
@@ -85,7 +89,6 @@ const setExp = (exp) =>{
 }
 
 const printPokemon = (pokemon) =>{
-    firstScreen.innerHTML = ''
 
     firstScreen.innerHTML = `
             <h3>${pokemon.name}</h3>
