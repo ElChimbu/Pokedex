@@ -110,6 +110,7 @@ body {
 }
 
 .screen {
+    display: inherit;
     position: relative;
     width: 420px;
     height: 330px;
@@ -118,6 +119,59 @@ body {
     border: solid rgb(187, 187, 187) 5px;
     background-color: rgb(96, 96, 167);
     border-radius: 10px;
+}
+
+.deepScreen {
+    display: none;
+    position: relative;
+    width: 420px;
+    height: 330px;
+    left: 25px;
+    bottom: 50px;
+    border: solid rgb(187, 187, 187) 5px;
+    background-color: rgb(96, 96, 167);
+    border-radius: 10px;
+}
+
+.deepScreen > p{
+    position: relative;
+    left: 15px;
+}
+
+.pokemonList{
+    overflow: scroll;
+    overflow-x: hidden;
+    height: 270px; 
+    width: 370px;
+}
+
+.eachOther{
+    position: relative;
+    top: 0px;
+    left: -30px;
+    height: 60px;
+    width: 350px;
+    border-radius: 0px;
+    
+}
+
+.eachOther > img{
+    position: relative;
+    bottom: 85px;
+    left: 260px;
+    width: 100px;
+    height: 100px;
+}
+
+.eachOther > p{
+    position: relative;
+    font-size: 1.3em;
+}
+
+#deletePoke{
+    position: absolute;
+    top: 20px;
+    left: 230px;
 }
 
 .middle-bar {

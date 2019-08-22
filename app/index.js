@@ -1,8 +1,7 @@
 import {firstScreen, addPokemon, handleToggle} from './app.js'
-
 const form = document.querySelector('#form');
 const left_btn = document.querySelector('.clickeablePad-left');
-const right_btn = document.querySelector('.clickeablePad-right')
+const right_btn = document.querySelector('.clickeablePad-right');
 
 firstScreen.innerHTML = `
     <p class="error">
