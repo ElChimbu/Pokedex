@@ -7,5 +7,10 @@
 ****APP.JS****
     Contiene las funciones basicas de la aplicacion:
         -addPokemon: Ejecuta un fetch a la pokeAPI, luego de transformar los datos, en la segunda promesa
-                     organiza los datos que interesan en constantes para luego encerrarlos a todos en una
-                     constante llamada "ALL".
+                     organiza los datos que interesan en constantes. 
+                     
+                     A continuacion se invocan dos funciones:
+
+                     *Todos los elementos son encerrados en una constante "ALL".
+                        -"ALL" es pasado como parametro para la funcion de pokemonData
+                     *

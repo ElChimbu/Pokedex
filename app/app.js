@@ -11,6 +11,7 @@ let contador = 1;
 //Exports
 export const firstScreen = document.querySelector('.screen');
 
+
 export const addPokemon = () => {
     let value = document.querySelector('#pokemon').value.toLowerCase();
 
@@ -32,11 +33,11 @@ export const addPokemon = () => {
 
 
                 const all = {name, attack1, attack2, type, weight, exp, img, id}
-                
-                pokemonArray.push(name)
 
-                pokeLocalStorage(pokemonArray)
                 pokemonData(all);
+
+                pokemonArray.push(name)
+                pokeLocalStorage(pokemonArray)
                 
            }).catch(err => notFoundPokemon(err)
            )
@@ -57,6 +58,8 @@ export const handleToggle = () => {
         contador = 1; 
     }
 }
+
+//Arrow Func
 
 const notFoundPokemon = (error) =>{
     if(error.status !== 200){
@@ -81,6 +84,9 @@ const pokemonData = (pokeData) =>{
     });
 
 }
+
+
+//Setea el width para que solo vaya del 0 a 100, de esa manera no sale de su contenedor. REF: linea 127
 
 const setExp = (exp) =>{
     if(exp > 100){

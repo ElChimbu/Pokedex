@@ -168,7 +168,7 @@ body {
     font-size: 1.3em;
 }
 
-#deletePoke{
+.deletePoke{
     position: absolute;
     top: 20px;
     left: 230px;
