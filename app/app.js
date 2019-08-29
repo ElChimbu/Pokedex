@@ -6,6 +6,8 @@ import {deepScreen} from './localStorage.js';
 
 //Variables
 let pokemonArray = []
+
+//Se utiliza como contador del toogle (linea 51)
 let contador = 1;
 
 //Exports
@@ -39,15 +41,14 @@ export const addPokemon = () => {
                 pokemonArray.push(name)
                 pokeLocalStorage(pokemonArray)
                 
-           }).catch(err => notFoundPokemon(err)
-           )
-        }).catch( err => console.log(err))
+           }).catch(err => notFoundPokemon(err))
+        })
     
     form.reset();
 }
 
 export const handleToggle = () => {
-    if(contador == 1 && Pokemon){
+    if(contador == 1){
         firstScreen.style.display = "none";
         deepScreen.style.display = "inherit";
 
@@ -63,9 +64,10 @@ export const handleToggle = () => {
 
 const notFoundPokemon = (error) =>{
     if(error.status !== 200){
-        return firstScreen.innerHTML = `
+         firstScreen.innerHTML = `
         <p class="error">Error type: "${error.status}"[pokemon not found]</p> `
     }
+
 
 }
 
