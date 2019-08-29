@@ -69,7 +69,13 @@
             </div>
         </div>
     </div>
-    
+    <script>
+        const deletePoke = (i) =>{
+            let get = JSON.parse(localStorage.getItem('Pokemon'));
+            get.splice(i, 1);
+            localStorage.setItem('Pokemon', JSON.stringify(get))
+        }
+    </script>
     <script src="https://kit.fontawesome.com/f6bea7b649.js"></script>
     <script type="module" src="../app/index.js"></script>
 </body>
