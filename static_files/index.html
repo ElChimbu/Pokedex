@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcat icon" href="pictures/icono.ico">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Russo+One&display=swap" rel="stylesheet">
     <title>Pokedex</title>
@@ -40,8 +41,8 @@
                 </h2>
                 <form id="form">
                     <input type="text" id="pokemon" placeholder="Insert a pokemon here" required>
-                    <button type="submit" class="btn"></button>
                 </form>
+                <button type="submit" class="btn"></button>
             </div>
             <div class="bottom-pad">
                 <div class="controls">
@@ -69,13 +70,26 @@
             </div>
         </div>
     </div>
-    <script>
-        const deletePoke = (i) =>{
-            let get = JSON.parse(localStorage.getItem('Pokemon'));
-            get.splice(i, 1);
-            localStorage.setItem('Pokemon', JSON.stringify(get))
-        }
-    </script>
+    <div class="capture">
+            <p>
+            Catch 'em all!
+            </p>
+            <i class="fas fa-arrow-down"></i>    
+    </div>
+    <div class="advice_pad">
+        <div class="contour" style="top:30px;">
+            <div class="top-bottom-btn">
+                <div class="clickeablePad-Top"></div>
+                <div class="clickeablePad-bottom"></div>
+            </div>
+        <div class="right-left-btn">
+            <button class="clickeablePad-left" style="background-color: rgb(165, 28, 28);"></button>
+            <button class="clickeablePad-right" style="background-color: rgb(165, 28, 28);"></button>
+            </div>
+        </div>
+        <p>Click to switch between list and the pokemon browser</p>
+    </div>
+    <script src="../app/list.js"></script>
     <script src="https://kit.fontawesome.com/f6bea7b649.js"></script>
     <script type="module" src="../app/index.js"></script>
 </body>

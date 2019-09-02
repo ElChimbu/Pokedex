@@ -1,8 +1,8 @@
 import {firstScreen, addPokemon, handleToggle} from './app.js'
-import {getPokemon} from './localStorage.js'
 const form = document.querySelector('#form');
 const left_btn = document.querySelector('.clickeablePad-left');
 const right_btn = document.querySelector('.clickeablePad-right');
+const capture_btn = document.querySelector('.btn');
 
 firstScreen.innerHTML = `
     <p class="error">
@@ -11,6 +11,10 @@ firstScreen.innerHTML = `
 `
 
 //DOM events
+
+capture_btn.addEventListener('click', () =>{
+    location.reload();
+})
 
 left_btn.addEventListener('click', () =>{
     handleToggle()
@@ -25,5 +29,4 @@ form.addEventListener('submit', (e) =>{
     addPokemon()
 })
 
-window.addEventListener('DOMContentLoaded', getPokemon())
 

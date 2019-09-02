@@ -1,29 +1,35 @@
 //Imports
-import Pokemon from './class.js';
 import {pokeLocalStorage} from './localStorage.js';
 import {deepScreen} from './localStorage.js';
 
 
 //Variables
 let pokemonArray = []
+let pokemonSign = document.querySelector('.capture');
+let capture_btn = document.querySelector('.btn');
+
 
 //Se utiliza como contador del toogle (linea 51)
-let contador = 1;
+let toggeleCounter = 1;
 
 //Exports
 export const firstScreen = document.querySelector('.screen');
 
 
 export const addPokemon = () => {
+    firstScreen.style.display = "inherit";
+    deepScreen.style.display = "none";
+    
     let value = document.querySelector('#pokemon').value.toLowerCase();
 
     fetch(`https://pokeapi.co/api/v2/pokemon/${value}`)
         .then( data =>{
-            
-            notFoundPokemon(data)
-
             data.json()
             .then(transformData =>{
+
+                pokemonSign.style.display = "inherit";
+                capture_btn.style.background = "#337a4a"
+
                 const name = transformData.name;
                 const attack1 = transformData.abilities[0].ability.name;
                 const attack2 = transformData.abilities[1].ability.name;
@@ -36,27 +42,27 @@ export const addPokemon = () => {
 
                 const all = {name, attack1, attack2, type, weight, exp, img, id}
 
-                pokemonData(all);
+                pokemonLocationData(all);
 
                 pokemonArray.push(name)
-                pokeLocalStorage(pokemonArray)
+                pokeLocalStorage(pokemonArray, name)
                 
-           }).catch(err => notFoundPokemon(err))
+           }).catch(() => notFoundPokemon(data))
         })
     
     form.reset();
 }
 
 export const handleToggle = () => {
-    if(contador == 1){
+    if(toggeleCounter == 1){
         firstScreen.style.display = "none";
         deepScreen.style.display = "inherit";
 
-        contador = 0
+        toggeleCounter = 0
     }else{
         firstScreen.style.display = "inherit";
         deepScreen.style.display = "none";
-        contador = 1; 
+        toggeleCounter = 1; 
     }
 }
 
@@ -71,15 +77,23 @@ const notFoundPokemon = (error) =>{
 
 }
 
-const pokemonData = (pokeData) =>{
+const pokemonLocationData = (pokeData) =>{
     
     fetch(`https://pokeapi.co/api/v2/location/${pokeData.id}/`)
         .then( response =>{
             response.json()
             .then(location => {
                 const currentLocation = location.areas[0].name.replace(/-/g, " ");
-
-                 let NewPokemon = new Pokemon(pokeData.name, pokeData.attack1, pokeData.attack2, pokeData.type, pokeData.weight, pokeData.exp, pokeData.img, currentLocation );
+                let NewPokemon = {
+                    "name": pokeData.name,
+                    "attack1": pokeData.attack1,
+                    "attack2": pokeData.attack2,
+                    "type": pokeData.type,
+                    "weight": pokeData.weight,
+                    "exp": pokeData.exp,
+                    "img": pokeData.img,
+                    "location": currentLocation
+                }
                  printPokemon(NewPokemon);
             })
 
